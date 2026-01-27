@@ -10,12 +10,16 @@ const navItems = [
 </script>
 
 <template>
-  <div class="flex min-h-screen bg-[#0f1419] text-white">
+  <div
+    class="flex min-h-screen bg-background-light dark:bg-background-dark text-gray-900 dark:text-white"
+  >
     <!-- Sidebar -->
-    <aside class="w-[200px] bg-[#1a1f2e] border-r border-slate-700/50 flex flex-col">
+    <aside
+      class="w-[200px] bg-white dark:bg-slate-card border-r border-gray-200 dark:border-border-muted flex flex-col"
+    >
       <!-- Logo -->
-      <div class="p-6 border-b border-slate-700/50">
-        <h1 class="text-primary text-xl font-bold">Wealth Journey</h1>
+      <div class="p-6 border-b border-gray-200 dark:border-border-muted">
+        <h1 class="text-primary text-xl font-bold font-display">Wealth Journey</h1>
       </div>
 
       <!-- Navigation -->
@@ -24,8 +28,8 @@ const navItems = [
           v-for="item in navItems"
           :key="item.path"
           :to="item.path"
-          class="flex items-center gap-3 px-4 py-3 rounded-lg text-slate-400 hover:bg-slate-800/50 hover:text-primary transition-colors"
-          active-class="bg-slate-800 text-primary"
+          class="flex items-center gap-3 px-4 py-3 rounded-lg text-gray-600 dark:text-slate-400 hover:bg-gray-100 dark:hover:bg-slate-800/50 hover:text-primary transition-colors"
+          active-class="bg-gray-100 dark:bg-slate-800 text-primary"
         >
           <span class="material-symbols-outlined text-xl">{{ item.icon }}</span>
           <span class="text-sm font-medium">{{ item.label }}</span>
@@ -33,7 +37,7 @@ const navItems = [
       </nav>
 
       <!-- Add Transaction Button -->
-      <div class="p-4 border-t border-slate-700/50">
+      <div class="p-4 border-t border-gray-200 dark:border-border-muted">
         <button
           class="w-full flex items-center justify-center gap-2 bg-primary/10 text-primary py-3 rounded-lg hover:bg-primary/20 transition-colors"
         >
@@ -45,8 +49,8 @@ const navItems = [
 
     <!-- Main Content Area -->
     <main class="flex-1">
-      <!-- This is where child pages will render -->
-      <slot />
+      <!-- This is where child route components will render -->
+      <RouterView />
     </main>
   </div>
 </template>
