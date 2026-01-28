@@ -4,11 +4,11 @@ import TopHeader from '@/components/TopHeader.vue'
 
 const navItems = [
   { label: 'Dashboard', icon: 'dashboard', path: '/dashboard' },
-  { label: 'Income', icon: 'trending_up', path: '/income' },
-  { label: 'Expenses', icon: 'payments', path: '/expenses' },
-  { label: 'Categories', icon: 'category', path: '/categories' },
-  { label: 'Budget', icon: 'account_balance_wallet', path: '/budget' },
-  { label: 'Reports', icon: 'bar_chart', path: '/reports' },
+  { label: 'Income', icon: 'trending_up', path: '/dashboard/income' },
+  { label: 'Expenses', icon: 'payments', path: '/dashboard/expenses' },
+  { label: 'Categories', icon: 'category', path: '/dashboard/categories' },
+  { label: 'Budget', icon: 'account_balance_wallet', path: '/dashboard/budget' },
+  { label: 'Reports', icon: 'bar_chart', path: '/dashboard/reports' },
 ]
 </script>
 
