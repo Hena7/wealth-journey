@@ -17,7 +17,7 @@ const currentDate = computed(() => {
 </script>
 
 <template>
-  <div class="p-8 space-y-6">
+  <div class="p-4 md:p-8 space-y-6">
     <!-- Header -->
     <div class="flex items-center justify-between">
       <!-- አዲስ Header እንደ ምስሉ -->
@@ -28,7 +28,7 @@ const currentDate = computed(() => {
     </div>
 
     <!-- 4 Stat Cards Grid -->
-    <div class="grid grid-cols-4 gap-6 mb-6">
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 mb-6">
       <!-- Card 1: Total Income -->
       <div class="bg-white dark:bg-slate-card rounded-xl p-5 border-l-4 border-green-500">
         <div class="flex items-center justify-between mb-3">
@@ -82,7 +82,7 @@ const currentDate = computed(() => {
       </div>
     </div>
     <!-- Monthly Income & Expenses Section -->
-    <div class="grid grid-cols-2 gap-6 mb-6">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 mb-6">
       <!-- Monthly Income Card -->
       <div
         class="bg-white dark:bg-slate-card rounded-xl p-6 border border-gray-200 dark:border-border-muted"
@@ -129,7 +129,7 @@ const currentDate = computed(() => {
 
     <!-- Recent Activity -->
     <!-- Recent Transactions & Quick Actions -->
-    <div class="grid grid-cols-2 gap-6">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
       <!-- Recent Transactions (Left) -->
       <div
         class="bg-white dark:bg-slate-card rounded-xl p-6 border border-gray-200 dark:border-border-muted"

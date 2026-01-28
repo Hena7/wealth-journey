@@ -31,7 +31,7 @@ onMounted(() => {
 <template>
   <button
     @click="toggleDarkMode"
-    class="fixed bottom-6 right-6 z-50 flex h-14 w-14 cursor-pointer items-center justify-center rounded-full bg-white shadow-lg ring-1 ring-slate-200 transition-all hover:scale-110 active:scale-95 dark:bg-slate-card dark:ring-border-muted"
+    class="fixed bottom-24 md:bottom-6 right-6 z-50 flex h-14 w-14 cursor-pointer items-center justify-center rounded-full bg-white shadow-lg ring-1 ring-slate-200 transition-all hover:scale-110 active:scale-95 dark:bg-slate-card dark:ring-border-muted"
     aria-label="Toggle Dark Mode"
   >
     <span v-if="!isDark" class="material-symbols-outlined text-amber-500 text-3xl">light_mode</span>

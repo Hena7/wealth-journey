@@ -21,17 +21,17 @@ const transactionCount = computed(() => {
 </script>
 
 <template>
-  <div class="p-8 space-y-6">
+  <div class="p-4 md:p-8 space-y-6">
     <!-- Header -->
-    <div class="flex items-center justify-between">
+    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
       <div>
-        <h1 class="text-3xl font-bold font-display mb-1">Income Management</h1>
+        <h1 class="text-2xl md:text-3xl font-bold font-display mb-1">Income Management</h1>
         <p class="text-gray-500 dark:text-slate-400 text-sm">Track all your income sources</p>
       </div>
 
       <!-- Add Income Button -->
       <button
-        class="flex items-center gap-2 px-5 py-3 bg-green-500 hover:bg-green-600 text-white rounded-lg font-medium transition-colors"
+        class="flex items-center justify-center gap-2 px-5 py-3 bg-green-500 hover:bg-green-600 text-white rounded-lg font-medium transition-colors w-full sm:w-auto"
       >
         <span class="material-symbols-outlined">add</span>
         <span>Add Income</span>
@@ -39,7 +39,7 @@ const transactionCount = computed(() => {
     </div>
 
     <!-- Stat Cards -->
-    <div class="grid grid-cols-3 gap-6 mb-6">
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 mb-6">
       <!-- Card 1: Total Income -->
       <div
         class="bg-white dark:bg-slate-card rounded-xl p-6 border border-gray-200 dark:border-border-muted"
@@ -66,11 +66,10 @@ const transactionCount = computed(() => {
         </h2>
       </div>
     </div>
-    <!-- Income Transactions Table -->
     <div
-      class="bg-white dark:bg-slate-card rounded-xl border border-gray-200 dark:border-border-muted overflow-hidden"
+      class="bg-white dark:bg-slate-card rounded-xl border border-gray-200 dark:border-border-muted overflow-x-auto"
     >
-      <table class="w-full text-left">
+      <table class="w-full text-left min-w-[600px]">
         <thead
           class="bg-gray-50 dark:bg-background-dark/50 border-b border-gray-200 dark:border-border-muted"
         >
@@ -108,7 +107,7 @@ const transactionCount = computed(() => {
             :key="transaction.id"
             class="hover:bg-gray-50 dark:hover:bg-slate-800/20 transition-colors"
           >
-            <td class="px-6 py-4 text-sm text-gray-900 dark:text-white">
+            <td class="px-6 py-4 text-sm text-gray-900 dark:text-white whitespace-nowrap">
               {{
                 new Date(transaction.date).toLocaleDateString('en-US', {
                   month: 'short',
@@ -117,17 +116,17 @@ const transactionCount = computed(() => {
                 })
               }}
             </td>
-            <td class="px-6 py-4">
+            <td class="px-6 py-4 whitespace-nowrap">
               <span
                 class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-100 dark:bg-blue-500/10 text-blue-600 dark:text-blue-400"
               >
                 {{ transaction.category }}
               </span>
             </td>
-            <td class="px-6 py-4 text-sm text-gray-500 dark:text-slate-400">
+            <td class="px-6 py-4 text-sm text-gray-500 dark:text-slate-400 truncate max-w-[200px]">
               {{ transaction.description || '-' }}
             </td>
-            <td class="px-6 py-4 text-sm font-bold text-green-500 text-right">
+            <td class="px-6 py-4 text-sm font-bold text-green-500 text-right whitespace-nowrap">
               ${{
                 transaction.amount.toLocaleString(undefined, {
                   minimumFractionDigits: 2,
@@ -135,7 +134,7 @@ const transactionCount = computed(() => {
                 })
               }}
             </td>
-            <td class="px-6 py-4 text-right border-border-muted">
+            <td class="px-6 py-4 text-right border-border-muted whitespace-nowrap">
               <div class="flex justify-end gap-2">
                 <button class="p-1 hover:text-primary transition-colors">
                   <span class="material-symbols-outlined text-xl">edit_square</span>

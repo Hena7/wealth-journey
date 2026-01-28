@@ -6,27 +6,24 @@ const searchQuery = ref('')
 </script>
 
 <template>
-  <header class="flex items-center justify-between px-8 py-4 bg-transparent">
+  <header class="flex items-center justify-between px-4 md:px-8 py-4 bg-transparent">
     <!-- Left: Logo & Search -->
     <div class="flex items-center gap-4 flex-1">
-      <!-- Logo
-      <div class="h-24 flex items-center px-6 transition-all duration-300">
+      <div class="md:hidden flex items-center gap-2">
         <div
-          class="min-w-[40px] h-10 w-10 bg-primary/10 text-primary rounded-full flex items-center justify-center"
+          class="w-8 h-8 bg-primary/10 text-primary rounded-full flex items-center justify-center"
         >
-          <span class="material-symbols-outlined">account_balance_wallet</span>
+          <span class="material-symbols-outlined text-lg">account_balance_wallet</span>
         </div>
-        <h1 class="ml-4 text-xl font-bold font-display text-gray-900 dark:text-white">
-          Wealth Journey
-        </h1>
-      </div> -->
+        <span class="font-bold text-sm">Wealth Journey</span>
+      </div>
     </div>
 
     <!-- Right: Actions & Profile -->
-    <div class="flex items-center gap-4">
+    <div class="flex items-center gap-2 md:gap-4">
       <!-- Move Money Button -->
       <button
-        class="flex items-center gap-2 px-4 py-2 bg-white dark:bg-slate-card border border-gray-200 dark:border-border-muted rounded-full text-sm font-medium hover:bg-gray-50 dark:hover:bg-slate-800 transition-colors"
+        class="hidden sm:flex items-center gap-2 px-4 py-2 bg-white dark:bg-slate-card border border-gray-200 dark:border-border-muted rounded-full text-sm font-medium hover:bg-gray-50 dark:hover:bg-slate-800 transition-colors"
       >
         <span>Move Money</span>
         <span class="material-symbols-outlined text-gray-500 text-lg">expand_more</span>

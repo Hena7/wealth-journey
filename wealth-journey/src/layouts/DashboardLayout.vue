@@ -14,11 +14,11 @@ const navItems = [
 
 <template>
   <div
-    class="flex min-h-screen bg-background-light dark:bg-background-dark text-gray-900 dark:text-white"
+    class="flex min-h-screen bg-background-light dark:bg-background-dark text-gray-900 dark:text-white pb-20 md:pb-0"
   >
-    <!-- Sidebar -->
+    <!-- Sidebar (Desktop only) -->
     <aside
-      class="group fixed h-full z-50 flex flex-col bg-white dark:bg-slate-card border-r border-gray-200 dark:border-border-muted transition-all duration-300 ease-in-out w-[88px] hover:w-72 overflow-hidden"
+      class="group fixed h-full z-50 hidden md:flex flex-col bg-white dark:bg-slate-card border-r border-gray-200 dark:border-border-muted transition-all duration-300 ease-in-out w-[88px] hover:w-72 overflow-hidden"
     >
       <!-- Navigation -->
       <nav class="flex-1 flex flex-col items-center group-hover:items-stretch px-4 gap-6 mt-4">
@@ -76,8 +76,26 @@ const navItems = [
       </div>
     </aside>
 
+    <!-- Bottom Navigation (Mobile only) -->
+    <nav
+      class="fixed bottom-0 left-0 right-0 z-50 md:hidden bg-white dark:bg-slate-card border-t border-gray-200 dark:border-border-muted flex items-center justify-around px-2 py-3"
+    >
+      <RouterLink
+        v-for="item in navItems.slice(0, 5)"
+        :key="item.path"
+        :to="item.path"
+        class="flex flex-col items-center gap-1 transition-colors"
+        :class="[$route.path === item.path ? 'text-primary' : 'text-gray-500 dark:text-slate-400']"
+      >
+        <span class="material-symbols-outlined text-2xl">
+          {{ item.icon }}
+        </span>
+        <span class="text-[10px] font-medium uppercase tracking-tighter">{{ item.label }}</span>
+      </RouterLink>
+    </nav>
+
     <!-- Main Content Area -->
-    <main class="flex-1 ml-[88px] transition-all duration-300">
+    <main class="flex-1 ml-0 md:ml-[88px] transition-all duration-300">
       <TopHeader />
       <!-- This is where child route components will render -->
       <RouterView />
