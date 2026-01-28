@@ -1,3 +1,4 @@
+E
 <script setup lang="ts">
 import { ref } from 'vue'
 
@@ -8,32 +9,17 @@ const searchQuery = ref('')
   <header class="flex items-center justify-between px-8 py-4 bg-transparent">
     <!-- Left: Logo & Search -->
     <div class="flex items-center gap-4 flex-1">
-      <!-- Logo Icon (using a symbol for now or a placeholder) -->
-      <div
-        class="w-10 h-10 rounded-full bg-white dark:bg-slate-card border border-gray-200 dark:border-border-muted flex items-center justify-center text-gray-900 dark:text-white"
-      >
-        <span class="material-symbols-outlined">donut_large</span>
-      </div>
-
-      <!-- Search Bar -->
-      <div class="relative w-96">
-        <span
-          class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 text-xl"
-        >
-          search
-        </span>
-        <input
-          v-model="searchQuery"
-          type="text"
-          placeholder="Search or jump to"
-          class="w-full bg-white dark:bg-slate-card border border-gray-200 dark:border-border-muted rounded-full py-2.5 pl-10 pr-12 text-sm text-gray-900 dark:text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-primary/50 transition-shadow"
-        />
+      <!-- Logo
+      <div class="h-24 flex items-center px-6 transition-all duration-300">
         <div
-          class="absolute right-3 top-1/2 -translate-y-1/2 px-1.5 py-0.5 rounded border border-gray-200 dark:border-border-muted bg-gray-50 dark:bg-slate-800 text-xs text-gray-400"
+          class="min-w-[40px] h-10 w-10 bg-primary/10 text-primary rounded-full flex items-center justify-center"
         >
-          ⌘K
+          <span class="material-symbols-outlined">account_balance_wallet</span>
         </div>
-      </div>
+        <h1 class="ml-4 text-xl font-bold font-display text-gray-900 dark:text-white">
+          Wealth Journey
+        </h1>
+      </div> -->
     </div>
 
     <!-- Right: Actions & Profile -->

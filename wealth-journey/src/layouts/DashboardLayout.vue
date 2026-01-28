@@ -3,10 +3,12 @@ import { ref } from 'vue'
 import TopHeader from '@/components/TopHeader.vue'
 
 const navItems = [
-  { label: 'Dashboard', icon: 'home', path: '/dashboard' },
-  { label: 'Transactions', icon: 'receipt_long', path: '/transactions' },
-  { label: 'Charts', icon: 'bar_chart', path: '/charts' },
-  { label: 'Settings', icon: 'settings', path: '/settings' },
+  { label: 'Dashboard', icon: 'dashboard', path: '/dashboard' },
+  { label: 'Income', icon: 'trending_up', path: '/income' },
+  { label: 'Expenses', icon: 'payments', path: '/expenses' },
+  { label: 'Categories', icon: 'category', path: '/categories' },
+  { label: 'Budget', icon: 'account_balance_wallet', path: '/budget' },
+  { label: 'Reports', icon: 'bar_chart', path: '/reports' },
 ]
 </script>
 
@@ -18,20 +20,6 @@ const navItems = [
     <aside
       class="group fixed h-full z-50 flex flex-col bg-white dark:bg-slate-card border-r border-gray-200 dark:border-border-muted transition-all duration-300 ease-in-out w-[88px] hover:w-72 overflow-hidden"
     >
-      <!-- Logo -->
-      <div class="h-24 flex items-center px-6 transition-all duration-300">
-        <div
-          class="min-w-[40px] h-10 w-10 bg-primary/10 text-primary rounded-full flex items-center justify-center"
-        >
-          <span class="material-symbols-outlined">donut_large</span>
-        </div>
-        <h1
-          class="ml-4 text-xl font-bold font-display text-gray-900 dark:text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap delay-100"
-        >
-          Wealth Journey
-        </h1>
-      </div>
-
       <!-- Navigation -->
       <nav class="flex-1 flex flex-col items-center group-hover:items-stretch px-4 gap-6 mt-4">
         <RouterLink
