@@ -19,9 +19,42 @@ const currentDate = computed(() => {
 <template>
   <div class="p-8 space-y-6">
     <!-- Header -->
-    <div class="flex items-center justify-between">
-      <h1 class="text-3xl font-bold font-display">Welcome Back</h1>
-      <p class="text-gray-500 dark:text-slate-400 text-sm">{{ currentDate }}</p>
+    <div class="flex items-center justify-between mb-8">
+      <h1 class="text-3xl font-bold font-display text-gray-900 dark:text-white">
+        Welcome Back, Liam !
+      </h1>
+
+      <div class="flex items-center gap-3">
+        <!-- Send Button (Primary) -->
+        <button
+          class="flex items-center gap-2 px-5 py-2.5 bg-blue-500 hover:bg-blue-600 text-white rounded-full font-medium transition-colors shadow-lg shadow-blue-500/20"
+        >
+          <span class="material-symbols-outlined text-sm">open_in_new</span>
+          <span>Send</span>
+        </button>
+
+        <!-- Other Actions (Secondary) -->
+        <button
+          v-for="action in ['Request', 'Transfer', 'Deposit', 'Pay Bill', 'Create Invoice']"
+          :key="action"
+          class="flex items-center gap-2 px-5 py-2.5 bg-white dark:bg-slate-card border border-gray-200 dark:border-border-muted text-gray-700 dark:text-gray-200 rounded-full font-medium hover:bg-gray-50 dark:hover:bg-slate-800 transition-colors"
+        >
+          <span class="material-symbols-outlined text-sm">
+            {{
+              action === 'Request'
+                ? 'download'
+                : action === 'Transfer'
+                  ? 'swap_horiz'
+                  : action === 'Deposit'
+                    ? 'add'
+                    : action === 'Pay Bill'
+                      ? 'receipt_long'
+                      : 'description'
+            }}
+          </span>
+          <span>{{ action }}</span>
+        </button>
+      </div>
     </div>
 
     <!-- Total Balance Card -->

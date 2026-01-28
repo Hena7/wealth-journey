@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { ref } from 'vue'
+import TopHeader from '@/components/TopHeader.vue'
 
 const navItems = [
   { label: 'Dashboard', icon: 'dashboard', path: '/dashboard' },
@@ -15,7 +16,7 @@ const navItems = [
   >
     <!-- Sidebar -->
     <aside
-      class="w-[200px] bg-white dark:bg-slate-card border-r border-gray-200 dark:border-border-muted flex flex-col"
+      class="w-[200px] bg-white dark:bg-slate-card border-r border-gray-200 dark:border-border-muted flex flex-col fixed h-full z-10"
     >
       <!-- Logo -->
       <div class="p-6 border-b border-gray-200 dark:border-border-muted">
@@ -23,7 +24,7 @@ const navItems = [
       </div>
 
       <!-- Navigation -->
-      <nav class="flex-1 p-4 space-y-2">
+      <nav class="flex-1 p-4 space-y-2 overflow-y-auto">
         <RouterLink
           v-for="item in navItems"
           :key="item.path"
@@ -48,7 +49,8 @@ const navItems = [
     </aside>
 
     <!-- Main Content Area -->
-    <main class="flex-1">
+    <main class="flex-1 ml-[200px]">
+      <TopHeader />
       <!-- This is where child route components will render -->
       <RouterView />
     </main>
